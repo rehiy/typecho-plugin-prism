@@ -71,7 +71,7 @@ class Prismjs_Plugin implements Typecho_Plugin_Interface
     public static function header()
     {
         $cssUrl = Helper::options()->pluginUrl . '/Prismjs/src/prism.css';
-        echo '<link rel="stylesheet" type="text/css" href="' . $cssUrl . '?v4" />';
+        echo '<link rel="stylesheet" type="text/css" href="' . $cssUrl . '?v5" />';
     }
 
     /**
@@ -84,7 +84,7 @@ class Prismjs_Plugin implements Typecho_Plugin_Interface
     public static function footer()
     {
         $jsUrl = Helper::options()->pluginUrl . '/Prismjs/src/prism.js';
-        echo '<script type="text/javascript" src="' . $jsUrl . '?v4"></script>';
+        echo '<script type="text/javascript" src="' . $jsUrl . '?v5"></script>';
     }
 
     /**
