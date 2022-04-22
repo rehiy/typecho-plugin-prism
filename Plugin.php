@@ -71,7 +71,7 @@ class Prismjs_Plugin implements Typecho_Plugin_Interface
     public static function header()
     {
         $cssUrl = Helper::options()->pluginUrl . '/Prismjs/src/prism.css';
-        echo '<link rel="stylesheet" type="text/css" href="' . $cssUrl . '?v2" />';
+        echo '<link rel="stylesheet" type="text/css" href="' . $cssUrl . '?v3" />';
     }
 
     /**
@@ -84,7 +84,7 @@ class Prismjs_Plugin implements Typecho_Plugin_Interface
     public static function footer()
     {
         $jsUrl = Helper::options()->pluginUrl . '/Prismjs/src/prism.js';
-        echo '<script type="text/javascript" src="' . $jsUrl . '?v2"></script>';
+        echo '<script type="text/javascript" src="' . $jsUrl . '?v3"></script>';
     }
 
     /**
@@ -98,6 +98,7 @@ class Prismjs_Plugin implements Typecho_Plugin_Interface
         $text = empty($lastResult) ? $text : $lastResult;
 
         if ($widget instanceof Widget_Archive || $widget instanceof Widget_Abstract_Comments) {
+            $text = str_replace('<pre><code>', '<pre><code class="lang-auto">', $text);
             $text = str_replace('lang-sh', 'lang-shell', $text);
         }
 
