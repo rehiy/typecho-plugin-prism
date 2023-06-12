@@ -6,7 +6,6 @@
  * @package Prismjs
  * @author 若海
  * @version 1.0.0
- * @dependence 9.9.2-*
  * @link http://www.rehiy.com
  */
 class Prismjs_Plugin implements Typecho_Plugin_Interface
