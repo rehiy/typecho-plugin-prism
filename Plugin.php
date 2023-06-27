@@ -99,7 +99,7 @@ class Prismjs_Plugin implements Typecho_Plugin_Interface
         if ($widget instanceof Widget_Archive || $widget instanceof Widget_Abstract_Comments) {
             $text = str_replace('<pre><code>', '<pre><code class="lang-auto">', $text);
             $text = str_replace('<pre>', '<pre class="line-numbers">', $text);
-            $text = str_replace('lang-sh', 'lang-shell', $text);
+            $text = preg_replace('/(?<=\s|-)lang-sh(?=\s|-)/', 'lang-shell', $text);
         }
 
         return $text;
